@@ -1,0 +1,49 @@
+version: 2.1
+
+executors:
+  ruby-executor:
+    docker:
+      - image: cimg/ruby:2.7.0
+    working_directory: ~/project
+
+jobs:
+  test:
+    executor: ruby-executor
+    steps:
+      - checkout
+
+      - run:
+          name: Install system dependencies for image_optim
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y \
+              jpegoptim \
+              optipng \
+              pngquant \
+              gifsicle \
+              advancecomp \
+              webp \
+              pngcrush \
+              libjpeg-turbo-progs \
+              nodejs \
+              npm
+
+      - run:
+          name: Install svgo via npm
+          command: sudo npm install -g svgo
+
+      - run:
+          name: Install dependencies
+          command: |
+            gem install bundler
+            bundle install --jobs=4 --retry=3
+
+      - run:
+          name: Run tests
+          command: bundle exec rake
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - test

@@ -1,5 +1,4 @@
-# Carrierwave Imageoptimize
-
+# Carrierwave Imageoptimize [![CircleCI](https://dl.circleci.com/status-badge/img/gh/pparker13122/carrierwave-imageoptimize/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/pparker13122/carrierwave-imageoptimize/tree/main)
 This gem allows you to optimize [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) images using the [image_optim](https://github.com/toy/image_optim) gem.
 
 

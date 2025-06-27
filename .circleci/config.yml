@@ -3,7 +3,7 @@ version: 2.1
 executors:
   ruby-executor:
     docker:
-      - image: cimg/ruby:2.7.0
+      - image: cimg/ruby:2.7.8-node
     working_directory: ~/project
 
 jobs:
@@ -25,12 +25,10 @@ jobs:
               webp \
               pngcrush \
               libjpeg-turbo-progs \
-              nodejs \
-              npm
 
       - run:
           name: Install svgo via npm
-          command: sudo npm install -g svgo
+          command: npm install svgo
 
       - run:
           name: Install dependencies

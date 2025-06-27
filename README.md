@@ -1,7 +1,9 @@
 # Carrierwave Imageoptimize
-## Fork of [carrierwave-imageoptim](https://github.com/nifuramu/carrierwave-imageoptim)
 
 This gem allows you to optimize [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) images using the [image_optim](https://github.com/toy/image_optim) gem.
+
+
+## What about carrierwave-imageoptim?
 
 This is a **community-maintained fork** of the original [`carrierwave-imageoptim`](https://github.com/nifuramu/carrierwave-imageoptim), which appears to be no longer maintained.
 

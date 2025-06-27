@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe CarrierWave::ImageOptim do
+describe CarrierWave::ImageOptimize do
   describe '#optimize' do
     before do
       @klass = Class.new(CarrierWave::Uploader::Base) do
-        include CarrierWave::ImageOptim
+        include CarrierWave::ImageOptimize
       end
       @instance = @klass.new
       FileUtils.cp(file_path('test.jpg'), file_path('test_copy.jpg'))
@@ -21,7 +21,7 @@ describe CarrierWave::ImageOptim do
         jpegoptim: true,
         optipng: true,
       }
-      expect(::ImageOptim).to receive(:new).with(CarrierWave::ImageOptim::DEFAULT_OPTIONS.deep_merge(options)).and_return(image_optim)
+      expect(::ImageOptim).to receive(:new).with(CarrierWave::ImageOptimize::DEFAULT_OPTIONS.deep_merge(options)).and_return(image_optim)
       expect(image_optim).to receive(:optimize_image!).with(file_path('test_copy.jpg'))
       @instance.optimize(options)
     end

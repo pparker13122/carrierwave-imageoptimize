@@ -2,7 +2,7 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'carrierwave'
 require 'fileutils'
 require 'mini_magick'
-require 'carrierwave-imageoptim'
+require 'carrierwave-imageoptimize'
 
 def file_path( *paths )
   File.expand_path(File.join(File.dirname(__FILE__), 'fixtures', *paths))

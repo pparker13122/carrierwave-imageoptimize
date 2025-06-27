@@ -1,8 +1,8 @@
 require 'image_optim'
-require 'carrierwave-imageoptim/version'
+require 'carrierwave-imageoptimize/version'
 
 module CarrierWave
-  module ImageOptim
+  module ImageOptimize
     DEFAULT_OPTIONS = {
       skip_missing_workers: true,
       advpng: false,

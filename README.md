@@ -2,11 +2,13 @@
 
 This gem allows you to optimize [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) images using the [image_optim](https://github.com/toy/image_optim) gem.
 
+This is a **community-maintained fork** of the original [`carrierwave-imageoptim`](https://github.com/nifuramu/carrierwave-imageoptim), which appears to be no longer maintained.
+
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'carrierwave-imageoptim'
+gem 'carrierwave-imageoptimize'
 ```
 
 And then execute:
@@ -15,14 +17,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install carrierwave-imageoptim
+    $ gem install carrierwave-imageoptimize
 
 ## Usage
 To add image optimization to your CarrierWave uploader, first include the module:
 
 ```ruby
 class MyUploader < CarrierWave::Uploader::Base
-  include CarrierWave::ImageOptim
+  include CarrierWave::ImageOptimize
   ...
 end
 ```
@@ -31,7 +33,7 @@ Then apply to all versions via:
 
 ```ruby
 class MyUploader < CarrierWave::Uploader::Base
-  include CarrierWave::ImageOptim
+  include CarrierWave::ImageOptimize
 
   process optimize: [{
     jpegoptim: true,
@@ -45,7 +47,7 @@ Or to a single image version via:
 
 ```ruby
 class MyUploader < CarrierWave::Uploader::Base
-  include CarrierWave::ImageOptim
+  include CarrierWave::ImageOptimize
 
   version :thumbnail do
     process optimize: [{
